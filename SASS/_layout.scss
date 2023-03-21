@@ -95,6 +95,11 @@ h1 {
     align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid var(--color-very-light-grayish-blue);
+    transition: all 0.2s;
+
+    &:hover &__cross {
+      display: block;
+    }
 
     &__checkbox {
       appearance: none;
@@ -131,13 +136,15 @@ h1 {
     }
     &__text {
       font-size: 18px;
+      margin-right: auto;
 
       &:hover {
         cursor: pointer;
       }
     }
     &__cross {
-      margin-left: auto;
+      // margin-left: auto;
+      // justify-self: right;
 
       &:hover {
         fill: red;

@@ -126,6 +126,10 @@ h1 {
   align-items: center;
   padding: 15px 0;
   border-bottom: 1px solid var(--color-very-light-grayish-blue);
+  transition: all 0.2s;
+}
+.todo__item:hover .todo__item__cross {
+  display: block;
 }
 .todo__item__checkbox {
   appearance: none;
@@ -155,12 +159,10 @@ h1 {
 }
 .todo__item__text {
   font-size: 18px;
+  margin-right: auto;
 }
 .todo__item__text:hover {
   cursor: pointer;
-}
-.todo__item__cross {
-  margin-left: auto;
 }
 .todo__item__cross:hover {
   fill: red;
