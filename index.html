@@ -11,10 +11,94 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./CSS/style.css" />
     <script defer src="./src/script.js"></script>
 
     <title>Frontend Mentor | Todo app</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="hero-image-container">
+        <img
+          src="./images/bg-desktop-light.jpg"
+          alt="Hero image"
+          class="hero-image"
+        />
+      </div>
+    </header>
+    <main class="container">
+      <div class="container__header">
+        <div class="hero__heading">
+          <h1>todo</h1>
+          <img src="./images/icon-moon.svg" alt="Icon" />
+        </div>
+        <div class="form">
+          <form action="" class="form__input">
+            <button type="submit" class="form__input__button"></button>
+            <input
+              type="text"
+              class="form__input__value"
+              name="todo-name"
+              placeholder="Input task"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="todo">
+        <ul class="todo__items">
+          <li class="todo__item">
+            <input type="checkbox" class="todo__item__checkbox" id="1" />
+            <p class="todo__item__text">Jogging</p>
+            <img
+              src="./images/icon-cross.svg"
+              alt="Icon cross"
+              class="todo__item__cross"
+            />
+          </li>
+          <li class="todo__item">
+            <input
+              type="checkbox"
+              class="todo__item__checkbox todo__item__checkbox--checked"
+              id="2"
+              checked
+            />
+            <p class="todo__item__text checked">Shopping</p>
+            <img
+              src="./images/icon-cross.svg"
+              alt="Icon cross"
+              class="todo__item__cross hidden"
+            />
+          </li>
+        </ul>
+        <ul class="todo__below">
+          <p class="todo__below__p">
+            <span class="todo__below__left">5</span> item<span class="only-s"
+              >s</span
+            >
+            left
+          </p>
+          <ul class="todo__below__list">
+            <li
+              class="todo__below__list__item--all todo__below__list__item--clicked"
+            >
+              All
+            </li>
+            <li class="todo__below__list__item--active">Active</li>
+            <li class="todo__below__list__item--completed">completed</li>
+          </ul>
+          <p class="todo__below__clear">Clear completed</p>
+        </ul>
+      </div>
+      <div class="footer">
+        <p class="footer__p">Drag and drop to reorder list</p>
+      </div>
+    </main>
+  </body>
 </html>
