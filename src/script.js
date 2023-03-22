@@ -1,5 +1,6 @@
 "use strict";
-
+const themeIcon = document.querySelector(".theme-icon");
+const heroImage = document.querySelector(".hero-image");
 const todoForm = document.querySelector(".form__input");
 const submitButton = document.querySelector(".form__input__button");
 const formInput = document.querySelector(".form__input__value");
@@ -46,6 +47,7 @@ function createTask(task) {
   const taskEl = document.createElement("li");
   taskEl.classList.add("todo__item");
   taskEl.setAttribute("id", task.id);
+  taskEl.setAttribute("draggable", true);
 
   const taskElMarkup = `
   <input type="checkbox" class="todo__item__checkbox" ${
@@ -189,3 +191,20 @@ todoContainer.addEventListener("click", (e) => {
 });
 
 updateCount();
+
+const dragArea = document.querySelector(".todo__items");
+new Sortable(dragArea, {
+  animation: 300,
+});
+
+themeIcon.onclick = function () {
+  console.log("hi");
+  document.body.classList.toggle("dark-theme");
+  if (document.body.classList.contains("dark-theme")) {
+    themeIcon.src = "./images/icon-sun.svg";
+    heroImage.src = "./images/bg-desktop-dark.jpg";
+  } else {
+    themeIcon.src = "./images/icon-moon.svg";
+    heroImage.src = "./images/bg-desktop-light.jpg";
+  }
+};

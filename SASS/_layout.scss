@@ -19,6 +19,16 @@
   &__header {
     width: 50%;
     padding: 10px 0;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 80%;
+    }
+    @media only screen and (max-width: $bp-small) {
+      width: 98%;
+    }
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding: 15px;
   }
 }
 h1 {
@@ -66,9 +76,14 @@ h1 {
       border-radius: 5px;
       border: none;
       font-size: 18px;
+      color: var(--color-todo-text);
       caret-color: var(--color-primary);
+      background-color: var(--color-very-light-gray);
       &:focus {
         outline: none;
+      }
+      @media only screen and (max-width: $bp-small) {
+        font-size: 16px;
       }
     }
   }
@@ -80,8 +95,17 @@ h1 {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  background-color: var(--color-very-light-gray);
   border-radius: 5px;
+  transition: all 0.2s;
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 98%;
+  }
 
   &__items {
     display: flex;
@@ -137,9 +161,14 @@ h1 {
     &__text {
       font-size: 18px;
       margin-right: auto;
+      color: var(--color-todo-text);
 
       &:hover {
         cursor: pointer;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 16px;
       }
     }
     &__cross {
@@ -159,10 +188,30 @@ h1 {
     justify-content: space-between;
     color: var(--color-dark-grayish-blue);
 
+    @media only screen and (max-width: $bp-small) {
+      display: grid;
+      position: relative;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 25px;
+    }
+
     &__list {
       list-style: none;
       display: flex;
       gap: 10px;
+
+      @media only screen and (max-width: $bp-small) {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 1;
+        justify-self: center;
+        gap: 30px;
+        margin-top: 15px;
+        padding: 10px 18%;
+        position: absolute;
+        top: 18px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
 
       & li {
         transition: all 0.2s;
@@ -170,11 +219,15 @@ h1 {
 
       & li:hover {
         cursor: pointer;
-        color: #222;
+        color: var(--color-footer-hover);
       }
 
       &__item--clicked {
         color: var(--color-primary);
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        // display: none;
       }
     }
 
@@ -182,7 +235,13 @@ h1 {
       transition: all 0.2s;
       &:hover {
         cursor: pointer;
-        color: #222;
+        color: var(--color-footer-hover);
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+        justify-self: end;
       }
     }
   }
@@ -193,6 +252,9 @@ h1 {
     margin-top: 50px;
     font-size: 14px;
     color: var(--color-dark-grayish-blue);
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 90px;
+    }
   }
 }
 
