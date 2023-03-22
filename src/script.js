@@ -5,6 +5,7 @@ const submitButton = document.querySelector(".form__input__button");
 const formInput = document.querySelector(".form__input__value");
 const todoItems = document.querySelector(".todo__items");
 const todoItem = document.querySelector(".todo__item");
+const todoContainer = document.querySelector(".todo");
 const todoItemCheckbox = document.querySelector(".todo__item__checkbox");
 const todoItemText = document.querySelector(".todo__item__text");
 const todoItemCross = document.querySelector(".todo__item__cross");
@@ -120,15 +121,9 @@ function updateTodoItem() {}
 function updateCount() {
   const totalItems = document.querySelector(".todo__below__left");
   const itemPlural = document.querySelector(".only-s");
-  const allTasks = document.querySelector(".todo__below__list__item--all");
-  const activeTasks = document.querySelector(
-    ".todo__below__list__item--active"
-  );
-  const completedTasks = document.querySelector(
-    ".todo__below__list__item----completed"
-  );
 
   totalItems.textContent = tasks.length;
+
   if (totalItems.textContent < 2) {
     itemPlural.classList.add("hidden");
   }
@@ -136,3 +131,61 @@ function updateCount() {
     itemPlural.classList.remove("hidden");
   }
 }
+
+todoContainer.addEventListener("click", (e) => {
+  const allTasks = document.querySelector(".todo__below__list__item--all");
+  const activeTasks = document.querySelector(
+    ".todo__below__list__item--active"
+  );
+  const completedTasks = document.querySelector(
+    ".todo__below__list__item--completed"
+  );
+  const totalItems = document.querySelector(".todo__below__left");
+
+  const allTasksArr = tasks.map((t) => t);
+
+  if (e.target.classList.contains("todo__below__list__item--all")) {
+    allTasks.classList.add("todo__below__list__item--clicked");
+    activeTasks.classList.remove("todo__below__list__item--clicked");
+    completedTasks.classList.remove("todo__below__list__item--clicked");
+    todoItems.innerHTML = "";
+    allTasksArr.map((t) => createTask(t));
+    totalItems.textContent = allTasksArr.length;
+  }
+  const activeTasksArr = tasks.filter((t) => t.isCompleted == false);
+  if (e.target.classList.contains("todo__below__list__item--active")) {
+    activeTasks.classList.add("todo__below__list__item--clicked");
+    allTasks.classList.remove("todo__below__list__item--clicked");
+    completedTasks.classList.remove("todo__below__list__item--clicked");
+    todoItems.innerHTML = "";
+    activeTasksArr.map((t) => createTask(t));
+    totalItems.textContent = activeTasksArr.length;
+  }
+  const completedTasksArr = tasks.filter((t) => t.isCompleted == true);
+  if (e.target.classList.contains("todo__below__list__item--completed")) {
+    completedTasks.classList.add("todo__below__list__item--clicked");
+    activeTasks.classList.remove("todo__below__list__item--clicked");
+    allTasks.classList.remove("todo__below__list__item--clicked");
+    todoItems.innerHTML = "";
+    completedTasksArr.map((t) => createTask(t));
+    totalItems.textContent = completedTasksArr.length;
+  }
+
+  if (totalItems.textContent < 2) {
+    itemPlural.classList.add("hidden");
+  }
+  if (totalItems.textContent > 1) {
+    itemPlural.classList.remove("hidden");
+  }
+
+  if (e.target.classList.contains("todo__below__clear")) {
+    tasks = tasks.filter((t) => t.isCompleted == false);
+    console.log(tasks);
+    todoItems.innerHTML = "";
+    tasks.map((t) => createTask(t));
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+});
+
+updateCount();
