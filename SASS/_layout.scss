@@ -14,11 +14,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: cR(50px);
 
   &__header {
     width: 50%;
-    padding: 10px 0;
+    padding: cR(10px) 0;
 
     @media only screen and (max-width: $bp-medium) {
       width: 80%;
@@ -32,13 +32,13 @@
   }
 }
 h1 {
-  font-size: 40px;
+  font-size: cR(40px);
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: 14px;
+  letter-spacing: cR(14px);
 }
 .form {
-  margin: 20px 0;
+  margin: cR(20px) 0;
 }
 .hero {
   &__heading {
@@ -55,27 +55,27 @@ h1 {
       background-color: transparent;
       border: 1px solid var(--color-primary);
       border-radius: 100%;
-      height: 25px;
-      width: 25px;
+      height: cR(25px);
+      width: cR(25px);
       position: absolute;
-      bottom: 19px;
-      left: 15px;
+      bottom: cR(19px);
+      left: cR(15px);
       transition: all 0.2s;
 
       &:hover,
       &:active {
-        border: 3px solid var(--color-primary);
+        border: cR(3px) solid var(--color-primary);
         border-radius: 100%;
         cursor: pointer;
       }
     }
     &__value {
       width: 100%;
-      margin: 5px 0;
-      padding: 15px 53px;
-      border-radius: 5px;
+      margin: cR(5px) 0;
+      padding: cR(15px) cR(53px);
+      border-radius: cR(5px);
       border: none;
-      font-size: 18px;
+      font-size: cR(18px);
       color: var(--color-todo-text);
       caret-color: var(--color-primary);
       background-color: var(--color-very-light-gray);
@@ -83,20 +83,20 @@ h1 {
         outline: none;
       }
       @media only screen and (max-width: $bp-small) {
-        font-size: 16px;
+        font-size: cR(16px);
       }
     }
   }
 }
 
 .todo {
-  padding: 10px 15px;
+  padding: cR(10px) cR(15px);
   width: 50%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px cR(4px) cR(10px) rgba(0, 0, 0, 0.2);
   background-color: var(--color-very-light-gray);
-  border-radius: 5px;
+  border-radius: cR(5px);
   transition: all 0.2s;
 
   @media only screen and (max-width: $bp-medium) {
@@ -111,13 +111,13 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 5px;
+    gap: cR(5px);
   }
 
   &__item {
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: cR(15px) 0;
     border-bottom: 1px solid var(--color-very-light-grayish-blue);
     transition: all 0.2s;
 
@@ -127,12 +127,12 @@ h1 {
 
     &__checkbox {
       appearance: none;
-      margin-right: 15px;
+      margin-right: cR(15px);
       background-color: transparent;
       border: 2px solid var(--color-light-grayish-blue);
       border-radius: 100%;
-      height: 25px;
-      width: 25px;
+      height: cR(25px);
+      width: cR(25px);
       transition: all 0.2s ease-in-out;
 
       &:hover {
@@ -141,8 +141,8 @@ h1 {
       }
       &:checked {
         content: "";
-        height: 25px;
-        width: 25px;
+        height: cR(25px);
+        width: cR(25px);
         background-color: #000;
         border: none;
         // background-image: url(../images/icon-check.svg);
@@ -152,14 +152,14 @@ h1 {
             hsl(192, 100%, 67%),
             hsl(280, 87%, 65%)
           );
-        height: 25px;
-        width: 25px;
+        height: cR(25px);
+        width: cR(25px);
         background-repeat: no-repeat;
         background-position: center;
       }
     }
     &__text {
-      font-size: 18px;
+      font-size: cR(18px);
       margin-right: auto;
       color: var(--color-todo-text);
 
@@ -168,7 +168,7 @@ h1 {
       }
 
       @media only screen and (max-width: $bp-small) {
-        font-size: 16px;
+        font-size: cR(16px);
       }
     }
     &__cross {
@@ -180,9 +180,9 @@ h1 {
   }
 
   &__below {
-    padding: 10px 0;
-    margin-bottom: -12px;
-    font-size: 14px;
+    padding: cR(10px) 0;
+    margin-bottom: cR(-12px);
+    font-size: cR(14px);
     font-weight: 400;
     display: flex;
     justify-content: space-between;
@@ -192,25 +192,25 @@ h1 {
       display: grid;
       position: relative;
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 25px;
+      row-gap: cR(25px);
     }
 
     &__list {
       list-style: none;
       display: flex;
-      gap: 10px;
+      gap: cR(10px);
 
       @media only screen and (max-width: $bp-small) {
         grid-column: 1 / span 2;
         grid-row: 2 / span 1;
         justify-self: center;
-        gap: 30px;
-        margin-top: 15px;
-        padding: 10px 18%;
+        gap: cR(30px);
+        margin-top: cR(15px);
+        padding: cR(10px) 18%;
         position: absolute;
-        top: 18px;
+        top: cR(18px);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
+        border-radius: cR(5px);
       }
 
       & li {
@@ -249,11 +249,11 @@ h1 {
 
 .footer {
   &__p {
-    margin-top: 50px;
-    font-size: 14px;
+    margin-top: cR(50px);
+    font-size: cR(14px);
     color: var(--color-dark-grayish-blue);
     @media only screen and (max-width: $bp-small) {
-      margin-top: 90px;
+      margin-top: cR(90px);
     }
   }
 }

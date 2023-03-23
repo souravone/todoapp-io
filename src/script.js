@@ -187,6 +187,7 @@ todoContainer.addEventListener("click", (e) => {
     tasks.map((t) => createTask(t));
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    updateCount();
   }
 });
 
@@ -198,7 +199,6 @@ new Sortable(dragArea, {
 });
 
 themeIcon.onclick = function () {
-  console.log("hi");
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
     themeIcon.src = "./images/icon-sun.svg";

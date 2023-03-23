@@ -65,11 +65,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 3.125rem;
 }
 .container__header {
   width: 50%;
-  padding: 10px 0;
+  padding: 0.625rem 0;
 }
 @media only screen and (max-width: 56.25em) {
   .container__header {
@@ -88,14 +88,14 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: 14px;
+  letter-spacing: 0.875rem;
 }
 
 .form {
-  margin: 20px 0;
+  margin: 1.25rem 0;
 }
 
 .hero__heading {
@@ -111,25 +111,25 @@ h1 {
   background-color: transparent;
   border: 1px solid var(--color-primary);
   border-radius: 100%;
-  height: 25px;
-  width: 25px;
+  height: 1.5625rem;
+  width: 1.5625rem;
   position: absolute;
-  bottom: 19px;
-  left: 15px;
+  bottom: 1.1875rem;
+  left: 0.9375rem;
   transition: all 0.2s;
 }
 .form__input__button:hover, .form__input__button:active {
-  border: 3px solid var(--color-primary);
+  border: 0.1875rem solid var(--color-primary);
   border-radius: 100%;
   cursor: pointer;
 }
 .form__input__value {
   width: 100%;
-  margin: 5px 0;
-  padding: 15px 53px;
-  border-radius: 5px;
+  margin: 0.3125rem 0;
+  padding: 0.9375rem 3.3125rem;
+  border-radius: 0.3125rem;
   border: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--color-todo-text);
   caret-color: var(--color-primary);
   background-color: var(--color-very-light-gray);
@@ -139,18 +139,18 @@ h1 {
 }
 @media only screen and (max-width: 37.5em) {
   .form__input__value {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 .todo {
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   width: 50%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
   background-color: var(--color-very-light-gray);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   transition: all 0.2s;
 }
 @media only screen and (max-width: 56.25em) {
@@ -167,12 +167,12 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 5px;
+  gap: 0.3125rem;
 }
 .todo__item {
   display: flex;
   align-items: center;
-  padding: 15px 0;
+  padding: 0.9375rem 0;
   border-bottom: 1px solid var(--color-very-light-grayish-blue);
   transition: all 0.2s;
 }
@@ -181,12 +181,12 @@ h1 {
 }
 .todo__item__checkbox {
   appearance: none;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   background-color: transparent;
   border: 2px solid var(--color-light-grayish-blue);
   border-radius: 100%;
-  height: 25px;
-  width: 25px;
+  height: 1.5625rem;
+  width: 1.5625rem;
   transition: all 0.2s ease-in-out;
 }
 .todo__item__checkbox:hover {
@@ -195,18 +195,18 @@ h1 {
 }
 .todo__item__checkbox:checked {
   content: "";
-  height: 25px;
-  width: 25px;
+  height: 1.5625rem;
+  width: 1.5625rem;
   background-color: #000;
   border: none;
   background: url(../images/icon-check.svg), linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  height: 25px;
-  width: 25px;
+  height: 1.5625rem;
+  width: 1.5625rem;
   background-repeat: no-repeat;
   background-position: center;
 }
 .todo__item__text {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-right: auto;
   color: var(--color-todo-text);
 }
@@ -215,7 +215,7 @@ h1 {
 }
 @media only screen and (max-width: 37.5em) {
   .todo__item__text {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 .todo__item__cross:hover {
@@ -223,9 +223,9 @@ h1 {
   cursor: pointer;
 }
 .todo__below {
-  padding: 10px 0;
-  margin-bottom: -12px;
-  font-size: 14px;
+  padding: 0.625rem 0;
+  margin-bottom: -0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
   display: flex;
   justify-content: space-between;
@@ -236,26 +236,26 @@ h1 {
     display: grid;
     position: relative;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 25px;
+    row-gap: 1.5625rem;
   }
 }
 .todo__below__list {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 }
 @media only screen and (max-width: 37.5em) {
   .todo__below__list {
     grid-column: 1/span 2;
     grid-row: 2/span 1;
     justify-self: center;
-    gap: 30px;
-    margin-top: 15px;
-    padding: 10px 18%;
+    gap: 1.875rem;
+    margin-top: 0.9375rem;
+    padding: 0.625rem 18%;
     position: absolute;
-    top: 18px;
+    top: 1.125rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
 }
 .todo__below__list li {
@@ -284,13 +284,13 @@ h1 {
 }
 
 .footer__p {
-  margin-top: 50px;
-  font-size: 14px;
+  margin-top: 3.125rem;
+  font-size: 0.875rem;
   color: var(--color-dark-grayish-blue);
 }
 @media only screen and (max-width: 37.5em) {
   .footer__p {
-    margin-top: 90px;
+    margin-top: 5.625rem;
   }
 }
 
